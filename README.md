@@ -5,7 +5,7 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
 - [x] Install and setup (Django)
 - [x] Install and setup (Vue)
 - [x] Include Font Awesome
-- [ ] Set up the base template
+- [x] Set up the base template
 - [ ] Create django app and models for products
 - [ ] Create serializer and views for the products
 - [ ] Create simple front page (latest products)

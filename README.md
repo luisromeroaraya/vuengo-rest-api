@@ -9,11 +9,11 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
 - [x] Create django app and models for products
 - [x] Create serializer and views for the products
 - [x] Create simple front page (latest products)
-- [ ] View a product
+- [x] View a product
     - [x] Create viewset in Django
-    - [ ] Create vue page for showing product
-    - [ ] Add link to detail page
-- [ ] Set up Vuex / State
+    - [x] Create vue page for showing product
+    - [x] Add link to detail page
+- [x] Set up Vuex / State
 - [ ] Make it possible to add to cart
 - [ ] Implement a loading bar
 - [ ] Set document title (All pages)

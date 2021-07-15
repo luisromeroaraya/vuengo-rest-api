@@ -6,10 +6,13 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
 - [x] Install and setup (Vue)
 - [x] Include Font Awesome
 - [x] Set up the base template
-- [ ] Create django app and models for products
-- [ ] Create serializer and views for the products
-- [ ] Create simple front page (latest products)
-- [ ] View a product 
+- [x] Create django app and models for products
+- [x] Create serializer and views for the products
+- [x] Create simple front page (latest products)
+- [ ] View a product
+    - [x] Create viewset in Django
+    - [ ] Create vue page for showing product
+    - [ ] Add link to detail page
 - [ ] Set up Vuex / State
 - [ ] Make it possible to add to cart
 - [ ] Implement a loading bar

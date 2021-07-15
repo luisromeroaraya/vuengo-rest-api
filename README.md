@@ -15,6 +15,10 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
     - [x] Add link to detail page
 - [x] Set up Vuex / State
 - [ ] Make it possible to add to cart
+    - [x] Add basic functions to vuex index.js
+    - [x] Initialize store in app.vue
+    - [x] Add button to product page
+    - [ ] Show a toast message
 - [ ] Implement a loading bar
 - [ ] Set document title (All pages)
 - [ ] Make it possible to view a category

@@ -22,7 +22,7 @@
               >
               <router-link to="/cart" class="button is-success">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                <span>Cart</span>
+                <span>Cart ({{ cartTotalLength }})</span>
               </router-link>
             </div>
           </div>
@@ -44,8 +44,28 @@ export default {
   data() {
     return {
       showMobileMenu: false,
+      cart: {
+        items: [],
+      },
     }
   },
+  beforeCreate() {
+    this.$store.commit('initializeStore'); // we call the function in vuex store
+  },
+  mounted() {
+    this.cart = this.$store.state.cart; // we load the cart from the state
+  },
+  computed: {
+    // this will we computed automatically every time it changes
+    cartTotalLength() {
+      let totalLength = 0;
+      // it will add all the item quantities to get a total number of items in the cart
+      for (let i=0; i < this.cart.items.length; i++) {
+        totalLength = totalLength + this.cart.items[i].quantity;
+      }
+      return totalLength;
+    }
+  }
 }
 </script>
 

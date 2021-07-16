@@ -25,6 +25,7 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
     - [x] Convert the product box to a component
 - [x] Add search functionality
 - [ ] View cart
+    - [ ] A cart item should be a component
 - [ ] Change contents of cart
 - [ ] Make it possible to sign up
 - [ ] Make it possible to log in

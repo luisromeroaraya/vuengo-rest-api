@@ -24,6 +24,12 @@
           </tbody>
         </table>
         <p v-else>You don't have any products in your cart...</p>
+        <div class="column is-12 box">
+          <h2 class="subtitle">Summary</h2>
+          <strong>{{ cartTotalPrice.toFixed(2) }}</strong>, {{ cartTotalLength }} items
+          <hr>
+          <router-link to="/cart/checkout" class="button is-dark">Proceed to checkout</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -55,6 +61,11 @@ export default {
         return (total = total + item.quantity);
       }, 0);
     },
+    cartTotalPrice() {
+      return this.cart.items.reduce((total, item) => {
+        return (total = total + (item.product.price * item.quantity));
+      }, 0);
+    }
   },
 };
 </script>

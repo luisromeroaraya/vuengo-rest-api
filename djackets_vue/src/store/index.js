@@ -38,6 +38,9 @@ export default new Vuex.Store({
       // we update the local file with our cart
       localStorage.setItem('cart', JSON.stringify(state.cart));
     },
+    setIsLoading(state, status) {
+      state.isLoading = status;
+    },
   },
   actions: {
   },

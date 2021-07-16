@@ -3,7 +3,7 @@
     <div class="columns is-multiline">
       <div class="column is-9">
         <figure class="image mb-6">
-          <img :src="product.get_image" :alt="product.name" />
+          <img v-bind:src="product.get_image" />
         </figure>
         <h1 class="title">{{ product.name }}</h1>
         <p>{{ product.description }}</p>
@@ -15,9 +15,9 @@
           <div class="control">
             <input type="number" class="input" min="1" v-model="quantity" />
           </div>
-        </div>
-        <div class="control">
-          <a href="" class="button is-dark" @click="addToCart">Add to cart</a>
+          <div class="control">
+            <a class="button is-dark" @click="addToCart()">Add to cart</a>
+          </div>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
 
 <script>
 import axios from "axios";
-
+import { toast } from "bulma-toast";
 export default {
   name: "Product",
   data() {
@@ -39,32 +39,39 @@ export default {
     this.getProduct();
   },
   methods: {
-    getProduct() {
+    async getProduct() {
+      this.$store.commit("setIsLoading", true);
       const category_slug = this.$route.params.category_slug;
       const product_slug = this.$route.params.product_slug;
-      axios
-        .get(`api/v1/products/${category_slug}/${product_slug}`)
+      await axios
+        .get(`/api/v1/products/${category_slug}/${product_slug}`)
         .then((response) => {
           this.product = response.data;
+          document.title = this.product.name + " | Djackets";
         })
         .catch((error) => {
           console.log(error);
         });
+      this.$store.commit("setIsLoading", false);
     },
     addToCart() {
-      // we make sure that we always add at least 1 item
-      if(isNaN(this.quantity) || this.quantity < 1) {
+      if (isNaN(this.quantity) || this.quantity < 1) {
         this.quantity = 1;
       }
       const item = {
         product: this.product,
-        quantity: this.quantity
-      }
-      this.$store.commit('addToCart', item); // we call the function from the vuex store
+        quantity: this.quantity,
+      };
+      this.$store.commit("addToCart", item);
+      toast({
+        message: "The product was added to the cart",
+        type: "is-success",
+        dismissible: true,
+        pauseOnHover: true,
+        duration: 2000,
+        position: "bottom-right",
+      });
     },
   },
 };
 </script>
-
-<style>
-</style>

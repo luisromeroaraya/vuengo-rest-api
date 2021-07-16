@@ -18,8 +18,8 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
     - [x] Add basic functions to vuex index.js
     - [x] Initialize store in app.vue
     - [x] Add button to product page
-    - [ ] Show a toast message
-- [ ] Implement a loading bar
+    - [x] Show a toast message
+- [x] Implement a loading bar
 - [ ] Set document title (All pages)
 - [ ] Make it possible to view a category
 - [ ] Add search functionality

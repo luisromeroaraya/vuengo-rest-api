@@ -14,13 +14,13 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
     - [x] Create vue page for showing product
     - [x] Add link to detail page
 - [x] Set up Vuex / State
-- [ ] Make it possible to add to cart
+- [x] Make it possible to add to cart
     - [x] Add basic functions to vuex index.js
     - [x] Initialize store in app.vue
     - [x] Add button to product page
     - [x] Show a toast message
 - [x] Implement a loading bar
-- [ ] Set document title (All pages)
+- [x] Set document title (All pages)
 - [ ] Make it possible to view a category
 - [ ] Add search functionality
 - [ ] View cart

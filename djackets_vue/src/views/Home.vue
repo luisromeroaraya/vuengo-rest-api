@@ -47,6 +47,7 @@ export default {
   components: {},
   mounted() {
     this.getLatestProducts();
+    document.title = "Home | Djackets" // changes url title
   },
   methods: {
     async getLatestProducts() {

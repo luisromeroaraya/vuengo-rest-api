@@ -26,7 +26,9 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
 - [x] Add search functionality
 - [x] View cart
     - [x] A cart item should be a component
-- [ ] Change contents of cart
+- [x] Change contents of cart
+    - [x] Increment/Decrement content
+    - [x] Remove from cart
 - [ ] Make it possible to sign up
 - [ ] Make it possible to log in
 - [ ] Create a simple my account page

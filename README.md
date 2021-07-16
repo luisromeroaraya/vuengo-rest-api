@@ -23,7 +23,7 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
 - [x] Set document title (All pages)
 - [x] Make it possible to view a category
     - [x] Convert the product box to a component
-- [ ] Add search functionality
+- [x] Add search functionality
 - [ ] View cart
 - [ ] Change contents of cart
 - [ ] Make it possible to sign up

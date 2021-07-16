@@ -3,10 +3,6 @@ from PIL import Image
 
 from django.core.files import File
 from django.db import models
-from django.db.models.fields import BLANK_CHOICE_DASH
-from django.db.models.query_utils import RegisterLookupMixin
-
-# Create your models here.
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -17,7 +13,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return f'/{self.slug}/'
 
@@ -36,7 +32,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return f'/{self.category.slug}/{self.slug}/'
 
@@ -52,6 +48,7 @@ class Product(models.Model):
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
                 self.save()
+
                 return 'http://127.0.0.1:8000' + self.thumbnail.url
             else:
                 return ''

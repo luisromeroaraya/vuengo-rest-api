@@ -21,7 +21,8 @@ I will be following this Full-Stack tutorial to learn how to use Django and Vue 
     - [x] Show a toast message
 - [x] Implement a loading bar
 - [x] Set document title (All pages)
-- [ ] Make it possible to view a category
+- [x] Make it possible to view a category
+    - [x] Convert the product box to a component
 - [ ] Add search functionality
 - [ ] View cart
 - [ ] Change contents of cart

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Product from '../views/Product.vue'
+import Category from '../views/Category.vue'
 
 Vue.use(VueRouter)
 
@@ -20,9 +21,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/:category_slug/:product_slug/',
+    path: '/:category_slug/:product_slug',
     name: 'Product',
     component: Product
+  },
+  {
+    path: '/:category_slug',
+    name: 'Category',
+    component: Category
   },
 ]
 

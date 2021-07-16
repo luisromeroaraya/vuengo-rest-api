@@ -1,6 +1,6 @@
 # E-commerce Website (Django + Vue + Bulma)
 
-I will be following this Full-Stack tutorial to learn how to use Django and Vue altogether.
+I will be following this Full-Stack [tutorial](https://www.youtube.com/watch?v=Yg5zkd9nm6w) to learn how to use Django and Vue altogether.
 
 - [x] Install and setup (Django)
 - [x] Install and setup (Vue)

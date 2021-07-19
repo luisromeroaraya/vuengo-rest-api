@@ -36,11 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
     'djoser',
+    
     'product',
+    'order',
 ]
 
 CORS_ALLOWED_ORIGINS = [

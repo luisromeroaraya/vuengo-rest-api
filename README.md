@@ -32,8 +32,8 @@ I will be following this Full-Stack [tutorial](https://www.youtube.com/watch?v=Y
 - [x] Make it possible to sign up
 - [x] Make it possible to log in
 - [x] Create a simple my account page
-- [ ] Proceed to checkout (Authentication)
-- [ ] Create a simple success page
+- [x] Proceed to checkout (Authentication)
+- [x] Create a simple success page
 - [ ] Show my orders on the my account page
 - [ ] Deploy Django 
 - [ ] Deploy Vue (Generate files locally, Send files to server, Set up nginx virtual host)

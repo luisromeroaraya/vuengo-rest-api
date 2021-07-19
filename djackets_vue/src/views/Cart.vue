@@ -52,6 +52,7 @@ export default {
     };
   },
   mounted() {
+    document.title = 'Cart | Djackets';
     this.cart = this.$store.state.cart;
   },
   methods: {

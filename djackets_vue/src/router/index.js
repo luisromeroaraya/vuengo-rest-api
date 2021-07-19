@@ -10,6 +10,8 @@ import LogIn from "../views/LogIn.vue";
 import Account from "../views/Account.vue";
 import Search from "../views/Search.vue";
 import Cart from "../views/Cart.vue";
+import Checkout from "../views/Checkout.vue";
+import Success from "../views/Success.vue";
 
 Vue.use(VueRouter);
 
@@ -55,6 +57,19 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: Cart,
+  },
+  {
+    path: "/cart/checkout",
+    name: "Checkout",
+    component: Checkout,
+    meta: {
+      requireLogin: true,
+    },
+  },
+  {
+    path: "/cart/success",
+    name: "Success",
+    component: Success,
   },
   {
     path: "/:category_slug/:product_slug",

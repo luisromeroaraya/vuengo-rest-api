@@ -31,7 +31,7 @@ I will be following this Full-Stack [tutorial](https://www.youtube.com/watch?v=Y
     - [x] Remove from cart
 - [x] Make it possible to sign up
 - [x] Make it possible to log in
-- [ ] Create a simple my account page
+- [x] Create a simple my account page
 - [ ] Proceed to checkout (Authentication)
 - [ ] Create a simple success page
 - [ ] Show my orders on the my account page

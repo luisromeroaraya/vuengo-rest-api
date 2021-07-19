@@ -22,6 +22,15 @@ export default new Vuex.Store({
       else {
         localStorage.setItem('cart', JSON.stringify(state.cart));
       }
+      // check authentication
+      if (localStorage.getItem('token')) {
+        state.token = localStorage.getItem('token');
+        state.isAuthenticated = true;
+      }
+      else {
+        state.token = '';
+        state.isAuthenticated = false;
+      }
     },
     addToCart(state, item) {
       console.log('addToCart');
@@ -40,6 +49,14 @@ export default new Vuex.Store({
     },
     setIsLoading(state, status) {
       state.isLoading = status;
+    },
+    setToken(state, token) {
+      state.token = token;
+      state.isAuthenticated = true;
+    },
+    removeToken(state) {
+      state.token = '';
+      state.isAuthenticated = false;
     },
   },
   actions: {

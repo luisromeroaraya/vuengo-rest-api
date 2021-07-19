@@ -17,13 +17,22 @@
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div class="navbar-menu" id="navbar-menu" v-bind:class="{ 'is-active': showMobileMenu }">
+      <div
+        class="navbar-menu"
+        id="navbar-menu"
+        v-bind:class="{ 'is-active': showMobileMenu }"
+      >
         <div class="navbar-start">
           <div class="navbar-item">
             <form action="/search" method="get">
               <div class="field has-addons">
                 <div class="control">
-                  <input type="text" name="query" class="input" placeholder="Search..." />
+                  <input
+                    type="text"
+                    name="query"
+                    class="input"
+                    placeholder="Search..."
+                  />
                 </div>
                 <div class="control">
                   <button class="button is-success">
@@ -41,7 +50,7 @@
           <router-link to="/winter" class="navbar-item">Winter</router-link>
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/log-in" class="button is-light"
+              <router-link to="/login" class="button is-light"
                 >Log In</router-link
               >
               <router-link to="/cart" class="button is-success">
@@ -73,6 +82,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -84,6 +94,12 @@ export default {
   },
   beforeCreate() {
     this.$store.commit("initializeStore"); // we call the function in vuex store
+    const token = this.$store.state.token; // verifies authorization token
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = "Token " + token;
+    } else {
+      axios.defaults.headers.common["Authorization"] = "";
+    }
   },
   mounted() {
     this.cart = this.$store.state.cart; // we load the cart from the state

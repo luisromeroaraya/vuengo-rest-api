@@ -29,8 +29,8 @@ I will be following this Full-Stack [tutorial](https://www.youtube.com/watch?v=Y
 - [x] Change contents of cart
     - [x] Increment/Decrement content
     - [x] Remove from cart
-- [ ] Make it possible to sign up
-- [ ] Make it possible to log in
+- [x] Make it possible to sign up
+- [x] Make it possible to log in
 - [ ] Create a simple my account page
 - [ ] Proceed to checkout (Authentication)
 - [ ] Create a simple success page

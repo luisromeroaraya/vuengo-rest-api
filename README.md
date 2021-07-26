@@ -36,6 +36,6 @@ I will be following this Full-Stack [tutorial](https://www.youtube.com/watch?v=Y
 - [x] Create a simple success page
 - [x] Create Order app and models in django
 - [x] Integrate stripe
-- [ ] Show my orders on the my account page
+- [x] Show my orders on the my account page
 - [ ] Deploy Django 
 - [ ] Deploy Vue (Generate files locally, Send files to server, Set up nginx virtual host)

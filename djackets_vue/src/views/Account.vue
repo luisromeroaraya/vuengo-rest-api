@@ -1,37 +1,63 @@
 <template>
   <div class="page-my-account">
-      <div class="columns is-multiline">
-          <div class="column is-12">
-              <h1 class="title">My account</h1>
-          </div>
-          <div class="column is-12">
-              <button class="button is-danger" @click="logOut()">Log out</button>
-          </div>
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <h1 class="title">My account</h1>
       </div>
+      <div class="column is-12">
+        <button class="button is-danger" @click="logOut()">Log out</button>
+      </div>
+      <hr />
+      <div class="column is-12">
+        <h2 class="subtitle">My orders</h2>
+        <OrderSummary v-for="order in orders" :key="order.key" :order="order" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
+import OrderSummary from "@/components/OrderSummary";
 
 export default {
-    name: 'Account',
-    methods: {
-        logOut() {
-            axios.defaults.headers.common['Authorization'] = '';
-            localStorage.removeItem('token');
-            localStorage.removeItem('username');
-            localStorage.removeItem('userid');
-            this.$store.commit('removeToken');
-            this.$router.push('/');
-        },
+  name: "Account",
+  components: {
+    OrderSummary,
+  },
+  data() {
+      return {
+          orders: []
+      }
+  },
+  methods: {
+    logOut() {
+      axios.defaults.headers.common["Authorization"] = "";
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      localStorage.removeItem("userid");
+      this.$store.commit("removeToken");
+      this.$router.push("/");
     },
-    mounted() {
-        document.title = ' My account | Djackets';
-    }
-}
+    async getMyOrders() {
+      this.$store.commit("SetIsLoading", true);
+      await axios
+        .get("/api/v1/orders/")
+        .then((response) => {
+          this.orders = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.$store.commit("setIsLoading", false);
+    },
+  },
+  mounted() {
+    document.title = " My account | Djackets";
+    this.getMyOrders();
+  },
+};
 </script>
 
 <style>
-
 </style>
